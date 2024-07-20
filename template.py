@@ -4,7 +4,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
-project_name = "DS_ML_PRACT_PROJECT"
+project_name = "mlproj"
 
 file_list = [
     f"src/{project_name}/__init__.py",
@@ -17,7 +17,10 @@ file_list = [
     f"src/{project_name}/pipelines/predictions_pipeline.py",
     f"src/{project_name}/exceptions.py",
     f"src/{project_name}/logger.py",
-    f"src/{project_name}/utils.py"
+    f"src/{project_name}/utils.py",
+    "main.py",
+    "app.py",
+    "Dockerfile"
 ]
 
 for filepath in file_list:
