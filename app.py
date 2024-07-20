@@ -1,12 +1,15 @@
-from src.mlproj.logger import logging  # type: ignore
-from src.mlproj.exceptions import CustomException  # type: ignore
 import sys
+from src.mlproj.logger import logging
+from src.mlproj.exceptions import CustomException
+from src.mlproj.components.data_ingestion import DataIngestion
 
-if __name__ == "__main__":
-    logging.info("The Execution has started")
+if __name__ == '__main__':
+    logging.info('Execution has started')
 
     try:
-        div = 1/0
+        data_ingest = DataIngestion()
+        data_ingest.initiate_data_ingestion()
+        
     except Exception as e:
-        logging.info("Custom Exception")
+        logging.info('Custom exception')
         raise CustomException(e, sys)
