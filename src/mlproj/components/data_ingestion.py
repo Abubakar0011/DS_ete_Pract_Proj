@@ -42,11 +42,11 @@ class DataIngestion:
             train_set, test_set = train_test_split(
                 df, test_size=0.2, random_state=42)
 
-            df.to_csv(
+            train_set.to_csv(
                 self.ingestion_config.train_data_path, 
                 index=False, header=True)
             
-            df.to_csv(
+            test_set.to_csv(
                 self.ingestion_config.test_data_path, 
                 index=False, header=True)
 
