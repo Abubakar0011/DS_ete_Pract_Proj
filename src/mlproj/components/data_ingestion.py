@@ -1,9 +1,10 @@
 import os
 import sys
+import pandas as pd
 from src.mlproj.logger import logging
 from src.mlproj.exceptions import CustomException
 from dataclasses import dataclass
-from src.mlproj.utils import reading_SQL_data
+# from src.mlproj.utils import reading_SQL_data
 from sklearn.model_selection import train_test_split
 
 ''' This class specifically store path for various data files involved
@@ -28,7 +29,8 @@ class DataIngestion:
             the test path from through this method '''
 
         try:
-            df = reading_SQL_data()
+            # df = reading_SQL_data()
+            df = pd.read_csv(os.path.join('notebook/Data', 'raw.csv'))
 
             logging.info('Reading data Completes from mySql DB.')
 
