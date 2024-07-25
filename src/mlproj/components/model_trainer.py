@@ -37,7 +37,7 @@ class ModelTrainer:
             X_train, y_train, X_test, y_test = (
                 train_array[:, :-1],
                 train_array[:, -1],
-                test_array[:, :, -1],
+                test_array[:, :-1],
                 test_array[:, -1]
             )
 
