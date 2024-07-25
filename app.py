@@ -1,5 +1,5 @@
 import sys
-from mlproj.components.model_trainer import ModelTrainer
+from src.mlproj.components.model_trainer import ModelTrainer
 from src.mlproj.logger import logging
 from src.mlproj.exceptions import CustomException
 from src.mlproj.components.data_ingestion import DataIngestion
