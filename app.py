@@ -4,7 +4,7 @@ from src.mlproj.logger import logging
 from src.mlproj.exceptions import CustomException
 from src.mlproj.components.data_ingestion import DataIngestion
 from src.mlproj.components.data_transformation import DataTransformation
-from src.mlproj.components.model_trainer import ModelTrainer
+# from src.mlproj.components.model_trainer import ModelTrainer
 
 
 if __name__ == '__main__':
