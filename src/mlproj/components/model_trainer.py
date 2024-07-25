@@ -31,6 +31,12 @@ class ModelTrainer:
     def __init__(self):
         self.model_trainer_config = ModelTrainingConfig()
 
+    def evaluation_metrics(self, actual_val, predicted_val):
+        rt_mn_sqr_er = np.sqrt(mean_squared_error(actual_val, predicted_val))
+        mn_abslt_err = mean_absolute_error(actual_val, predicted_val)
+        r2_scr = r2_score(actual_val, predicted_val)
+        return rt_mn_sqr_er, mn_abslt_err, r2_scr
+
     def initiate_model_trainer(self, train_array, test_array):
         try:
             logging.info('Spliting Training and test data')
@@ -129,7 +135,7 @@ class ModelTrainer:
 
                 predicted_qualities = best_model.predict(X_test)
 
-                (rmse, mae, r2) = self.eval_metrics(
+                (rmse, mae, r2) = self.evaluation_metrics(
                     y_test, predicted_qualities)
 
                 mlflow.log_params(best_params)
@@ -156,7 +162,7 @@ class ModelTrainer:
             logging.info("Best model on both training and testing dataset")
 
             save_object_file_path(
-                file_path=self.model_trainer_config.trained_model_file_path,
+                file_path=self.model_trainer_config.training_model_file_path,
                 obj=best_model
             )
 
@@ -168,8 +174,4 @@ class ModelTrainer:
         except Exception as e:
             raise CustomException(e, sys)
 
-    def evaluation_metrics(self, actual_val, predicted_val):
-        rt_mn_sqr_er = np.sqrt(mean_squared_error(actual_val, predicted_val))
-        mn_abslt_err = mean_absolute_error(actual_val, predicted_val)
-        r2_scr = r2_score(actual_val, predicted_val)
-        return rt_mn_sqr_er, mn_abslt_err, r2_scr
+    

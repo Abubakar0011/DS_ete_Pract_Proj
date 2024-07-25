@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/abubakarsaddiq/Desktop/Py_ML_AI/end_to_end_DS_ML_Pract_Proj/mlruns/0/a52de008ac824492968d86803892c0a4/artifacts
+end_time: 1721923482957
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a52de008ac824492968d86803892c0a4
+run_name: dashing-flea-929
+run_uuid: a52de008ac824492968d86803892c0a4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721923481663
+status: 3
+tags: []
+user_id: abubakarsaddiq
