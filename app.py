@@ -15,8 +15,8 @@ if __name__ == '__main__':
         trn_dta_pat, tst_dta_pat = data_ingestion.initiate_data_ingestion()
 
         # data_transformation_config=DataTransformationConfig()
-        data_transformation = DataTransformation()
-        train_ar, test_ar, _ = data_transformation.initiate_data_transormation(
+        dta_transformation = DataTransformation()
+        train_ar, test_ar, _ = dta_transformation.initiate_data_transformation(
             trn_dta_pat, tst_dta_pat)
 
         # Model Training
